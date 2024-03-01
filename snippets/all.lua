@@ -1,4 +1,4 @@
-local helpers = require('personal.luasnip-helper-funcs')
+local helpers = require('user.snip_helpers')
 local get_date = helpers.get_ISO_8601_date
 return {
     s({trig = "lipsum"},
