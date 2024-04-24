@@ -7,4 +7,5 @@ return {
     priority = 1000,
     config = true,
   },
+  { "nvim-neo-tree/neo-tree.nvim", enabled = false },
 }
