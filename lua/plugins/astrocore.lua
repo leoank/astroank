@@ -1,5 +1,3 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- AstroCore provides a central place to modify mappings, vim options, autocommands, and more!
 -- Configuration documentation can be found with `:h astrocore`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -32,11 +30,17 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "auto", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
+        conceallevel = 2,
+        list = true,
+        lcs = "eol:↲,trail:-,tab:» ",
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
         -- NOTE: `mapleader` and `maplocalleader` must be set in the AstroNvim opts or before `lazy.setup`
         -- This can be found in the `lua/lazy_setup.lua` file
+        tex_flavor = "latex",
+        vimtex_view_method = "sioyek",
+        vimtex_quickfix_mode = 0,
       },
     },
     -- Mappings can be configured through AstroCore as well.
@@ -64,6 +68,16 @@ return {
         ["<Leader>b"] = { desc = "Buffers" },
         -- quick save
         -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+        ["<Leader>N"] = { name = "Neorg" },
+        ["<Leader>Nw"] = { ":Neorg workspace", desc = "Switch Neorg workspace" },
+        ["<Leader>N:"] = { ":Neorg ", desc = "Neorg cmd" },
+        ["<Leader>o"] = { ":Oil<cr>", desc = "Open folder in Oil" },
+        ["<Leader>m"] = { ":lua require('nabla').toggle_virt()<cr>", desc = "Toggle Nabla virtual lines" },
+        ["<Leader>M"] = { ":lua require('nabla').popup()<cr>", desc = "Toggle Nabla popup" },
+      },
+      v = {
+        ["J"] = { ":m '>+1<cr>gv+gv" },
+        ["K"] = { ":m '>-2<cr>gv+gv" },
       },
       t = {
         -- setting a mapping to false will disable it
