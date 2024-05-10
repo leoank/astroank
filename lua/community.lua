@@ -36,7 +36,6 @@ return {
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
-  { import = "astrocommunity.note-taking.neorg" },
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   {
     "epwalsh/obsidian.nvim",
