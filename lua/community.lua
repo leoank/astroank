@@ -37,22 +37,6 @@ return {
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.note-taking.neorg" },
-  {
-    "nvim-neorg/neorg",
-    event = "VeryLazy",
-    opts = {
-      load = {
-        ["core.dirman"] = { -- Manages Neorg workspaces
-          config = {
-            workspaces = {
-              home = "~/Sync/Documents/sangrah/norg/home",
-              work = "~/Sync/Documents/sangrah/norg/work",
-            },
-          },
-        },
-      },
-    },
-  },
   { import = "astrocommunity.note-taking.obsidian-nvim" },
   {
     "epwalsh/obsidian.nvim",
