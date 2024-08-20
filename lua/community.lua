@@ -7,6 +7,7 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
+  -- { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.neogen" },
   {
     "danymat/neogen",
@@ -30,6 +31,7 @@ return {
   { import = "astrocommunity.git.octo-nvim" },
   { import = "astrocommunity.file-explorer.oil-nvim" },
   { import = "astrocommunity.motion.flash-nvim" },
+  { import = "astrocommunity.motion.nvim-surround" },
   { import = "astrocommunity.scrolling.neoscroll-nvim" },
   { import = "astrocommunity.scrolling.mini-animate" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
@@ -38,8 +40,9 @@ return {
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
-  { import = "astrocommunity.media.image-nvim"},
+  { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.note-taking.obsidian-nvim" },
+  { import = "astrocommunity.completion.codeium-nvim" },
   {
     "epwalsh/obsidian.nvim",
     event = { "BufReadPre " .. vim.fn.expand "~" .. "/Sync/Documents/sangrah/*.md" },

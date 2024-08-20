@@ -8,4 +8,18 @@ return {
     config = true,
   },
   { "nvim-neo-tree/neo-tree.nvim", enabled = false },
+  {
+    "robitx/gp.nvim",
+    config = function()
+      local conf = {
+        providers = {
+          openai = { disable = true },
+          ollama = {
+            disable = false,
+          },
+        },
+      }
+      require("gp").setup(conf)
+    end,
+  },
 }
