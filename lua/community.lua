@@ -8,6 +8,7 @@ return {
   { import = "astrocommunity.pack.lua" },
   -- import/override with your plugins folder
   -- { import = "astrocommunity.editing-support.yanky-nvim" },
+  { import = "astrocommunity.editing-support.undotree" },
   { import = "astrocommunity.editing-support.neogen" },
   {
     "danymat/neogen",
@@ -37,6 +38,7 @@ return {
   { import = "astrocommunity.markdown-and-latex.peek-nvim" },
   { import = "astrocommunity.markdown-and-latex.vimtex" },
   { import = "astrocommunity.lsp.lsp-signature-nvim" },
+  { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.color.nvim-highlight-colors" },
   { import = "astrocommunity.media.image-nvim" },
