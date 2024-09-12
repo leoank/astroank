@@ -66,7 +66,7 @@ return {
     },
   },
   opts = {
-    provider = "local",
+    provider = "ollama",
     vendors = {
       ollama = {
         ["local"] = true,
