@@ -65,45 +65,36 @@ return {
       end,
     },
   },
-  opts = {},
-  specs = { -- configure optional plugins
-    { -- if copilot.lua is available, default to copilot provider
-      "zbirenbaum/copilot.lua",
-      optional = true,
-      specs = {
-        {
-          "yetone/avante.nvim",
-          opts = {
-            vendors = {
-              ollama = {
-                ["local"] = true,
-                endpoint = "karkinos:11434/v1",
-                -- model = "codegemma",
-                model = "deepseek-coder-v2:latest",
-                parse_curl_args = function(opts, code_opts)
-                  return {
-                    url = opts.endpoint .. "/chat/completions",
-                    headers = {
-                      ["Accept"] = "application/json",
-                      ["Content-Type"] = "application/json",
-                    },
-                    body = {
-                      model = opts.model,
-                      messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
-                      max_tokens = 2048,
-                      stream = true,
-                    },
-                  }
-                end,
-                parse_response_data = function(data_stream, event_state, opts)
-                  require("avante.providers").openai.parse_response(data_stream, event_state, opts)
-                end,
-              },
+  opts = {
+    provider = "local",
+    vendors = {
+      ollama = {
+        ["local"] = true,
+        endpoint = "karkinos:11434/v1",
+        -- model = "codegemma",
+        model = "deepseek-coder-v2:latest",
+        parse_curl_args = function(opts, code_opts)
+          return {
+            url = opts.endpoint .. "/chat/completions",
+            headers = {
+              ["Accept"] = "application/json",
+              ["Content-Type"] = "application/json",
             },
-          },
-        },
+            body = {
+              model = opts.model,
+              messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
+              max_tokens = 2048,
+              stream = true,
+            },
+          }
+        end,
+        parse_response_data = function(data_stream, event_state, opts)
+          require("avante.providers").openai.parse_response(data_stream, event_state, opts)
+        end,
       },
     },
+  },
+  specs = { -- configure optional plugins
     {
       -- make sure `Avante` is added as a filetype
       "MeanderingProgrammer/render-markdown.nvim",
