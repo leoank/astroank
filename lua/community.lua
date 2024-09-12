@@ -9,17 +9,6 @@ return {
   -- import/override with your plugins folder
   -- { import = "astrocommunity.editing-support.yanky-nvim" },
   { import = "astrocommunity.editing-support.undotree" },
-  { import = "astrocommunity.editing-support.neogen" },
-  {
-    "danymat/neogen",
-    opts = {
-      languages = {
-        python = {
-          template = { annotation_convention = "numpydoc" },
-        },
-      },
-    },
-  },
   { import = "astrocommunity.pack.python-ruff" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.typescript" },
