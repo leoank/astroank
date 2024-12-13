@@ -71,7 +71,7 @@ return {
       ollama = {
         ["local"] = true,
         endpoint = "karkinos:11434/v1",
-        model = "llama3.1:70b",
+        model = "llama3.3",
         parse_curl_args = function(opts, code_opts)
           return {
             url = opts.endpoint .. "/chat/completions",
